@@ -14,9 +14,11 @@ namespace JSONApiApp.Controlles
         //Обработчик конверта величины
         public async Task ConvertNumber(HttpContext context)
         {
-            double numberInput = Convert.ToDouble(context.Request.Query["number"]);
+
+            //JSON ПЕРЕДАЧА ПАРАМЕТРОВ СДЕЛАТЬ!
+           /* double numberInput = Convert.ToDouble(context.Request.Query["number"]);
             string nameUnitInput = context.Request.Query["nameUnitInput"];
-            string nameUnitOutput = context.Request.Query["nameUnitOutput"];
+            string nameUnitOutput = context.Request.Query["nameUnitOutput"];*/
             convertDistance.ToMeter(nameUnitInput, numberInput);
             double number= convertDistance.GetConverter(nameUnitOutput);
             await context.Response.WriteAsJsonAsync(number);
