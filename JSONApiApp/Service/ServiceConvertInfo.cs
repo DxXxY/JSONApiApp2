@@ -1,38 +1,35 @@
 ﻿namespace JSONApiApp.Service
 {
-    public class ServiceConvertDistance
+    public class ServiceConvertInfo
     {
         public double UnitOutput { get; set; }//Выводимая величина
         public double UnitInput { get; set; }//Вводимая величина
 
         //Перевод вводимой величины в метры
-        public void ToMeter(string NameUnit,double number)
+        public void ToSimple(string NameUnit,double number)
         {
             switch (NameUnit)
             {
-                case "Meter":
+                case "byte":
                     UnitInput = number * 1;
                     break;
 
-                case "Kilometer":
-                    UnitInput = number * 1000;
+                case "Kbyte":
+                    UnitInput = number * 1024;
                     break;
 
-                case "Milimeter":
-                    UnitInput = number / 1000;
+                case "Mbyte":
+                    UnitInput = number * 1024 * 1024;
                     break;
 
-                case "Centimeter":
-                    UnitInput = number / 100;
+                case "Gbyte":
+                    UnitInput = number  *1024 * 1024 * 1024;
                     break;
 
-                case "Yards":
-                    UnitInput = number * 1.09361;
+                case "Ter":
+                    UnitInput = number * 1024 * 1024 * 1024 * 1024;
                     break;
 
-                case "lb.":
-                    UnitInput = number * 3.28084;
-                    break;
 
                 default:
                     break;
@@ -44,28 +41,24 @@
         {
             switch (UnitNameOutput)
             {
-                case "Meter":
+                case "byte":
                     return UnitInput * 1;
                     break;
 
-                case "Kilometer":
-                    return UnitInput / 1000;
+                case "Kbyte":
+                    return UnitInput / 1024;
                     break;
 
-                case "Milimeter":
-                    return UnitInput * 1000;
+                case "Mbyte":
+                    return UnitInput / 1024 / 1024;
                     break;
 
-                case "Centimeter":
-                    return UnitInput * 100;
+                case "Gbyte":
+                    return UnitInput / 1024 / 1024 / 1024;
                     break;
 
-                case "Yards":
-                    return UnitInput / 1.09361;
-                    break;
-
-                case "lb.":
-                    return UnitInput / 3.28084;
+                case "Ter":
+                    return UnitInput / 1024 / 1024 / 1024 / 1024;
                     break;
 
                 default:
