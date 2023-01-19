@@ -16,7 +16,7 @@ namespace JSONApiApp.Controlles
         
         public async Task Info(HttpContext context)
         {
-            await context.Response.WriteAsJsonAsync(new BaseMessage.StringMessage("/ping, /status, /info"));
+            await context.Response.WriteAsJsonAsync(new BaseMessage.StringMessage("/ping, /status, /info, /conver (wrtite number:**,nameNumberInput:(byte,Kbyte,Mbyte,Gbyte,Ter),nameNumberOutput:(byte,Kbyte,Mbyte,Gbyte,Ter)"));
         }
       
     }

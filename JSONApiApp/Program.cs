@@ -16,6 +16,7 @@ var app = builder.Build();
 
 
 //Обработчики
+app.MapGet("/", () => "pong");
 app.MapGet("/ping", () => "pong");
 
 app.MapGet("/status", app.Services.GetService<MainController>().Status);
